@@ -7,11 +7,11 @@ Exam-style questions are a basic teaching tool that can be used for a variety of
 # Purpose
 The purpose of the project is to ease the hectic task of going through minute details of a video in order to generate Multiple Choice Questions (MCQs) for various quizzes.
 The primary function of this project is to take in a video and generate high quality MCQs with four options from the provided video with the help of Natural Language Processing.
-#Existing System
+# Existing System
 • Multiple choice question (MCQ) is a very popular form of assessment in which respon- dents are asked to select the best possible answer out of a set of choices.
 • Intraditionalmethod,MCQ’sareproducedManuallyandbyusingBruteForceapproach which is a tedious and time consuming task.
 • So to generate MCQ’s in simple and timely manner this system is useful.
-#Proposed System
+# Proposed System
 • Our proposed idea of producing MCQs with software can help organizations and institu- tions to evaluate in a simple and timely manner.
 • Our proposed idea of producing MCQs with software can help organizations and institu- tions to evaluate in a simple and timely manner.
 • To make our MCQ’s more tricky and comparable to human made MCQ’s, They should be properly analyzed and accurate and with a well-defined structure.
@@ -21,9 +21,9 @@ The whole methodology can be grouped into 4 parts.
 2. The second phase is processing, analyzing and extraction of key words from the data provided.
 3. The next phase sentences for the keywords are mapped accordingly.
 4. And the last phase is where false option is Produced which together creates a stan- dard concise MCQ’s
-#REQUIREMENT SPECIFICATIONS
+# REQUIREMENT SPECIFICATIONS
 
-  #Hardware Requirements
+  # Hardware Requirements
 Hardware Requirements for the project are::
 The functional requirements or the overall description documents include the product
 perspective and features, operating system and operating environment, graphics requirements, design constraints and user documentation.
@@ -32,24 +32,28 @@ The appropriation of requirements and implementation constraints gives the gener
 • Operating System requirements: Preferably Linux flavour. MacOS or Windows can also be used.
 • Operating System: Flavour of Linux, preferably Ubuntu. ‘
 
-#Software Requirements:
+# Software Requirements:
 Minimum hardware requirements are very dependent on the particular software being developed by a given En thought Python . Applications that need to store large arrays/objects in memory will require more RAM, whereas applications that need to perform numerous cal- culations or tasks more quickly will require a faster processor.
 1. Python: Python is a high-level, general-purpose programming language.
 2. version: Python 3.9 or greater
 3. Highly dependent on libraries like nltk, pandas, numpy, sklearn, tensorflow, FFPEG, etc 4. No OS Restrictions
-#system Analysis
+# system Analysis
  We propose an Automated MCQ generation model that generates relevant MCQ’s from the given video lecture.
 • The input given is in the form of a video which is then converted to text and gets the summarized text after Pre-processing.
 • TheInformativeretrievalalgorithmretrievesthecorecontentofthevideo,andwe’llpass it the MCQ generation models which is the second phase of our project.
 • First, we train the model and then test it with the current summary extracted given.
 • The performance of the proposed model is calculated based on the diversions in the options generated and an accuracy score is generated.
 
-#Algorithms
-#BERT (Bidirectional Encoder Representations from Transformers)
+# Algorithms
+# BERT (Bidirectional Encoder Representations from Transformers)
 • BERT (Bidirectional Encoder Representations from Transformers) is a neural network- based technique for natural language processing.
 • It is a pre-trained open-sourced model from Google. It helps computers to understand the language a bit more as humans do.
 • The input text is summarized using the BERTSUM model, which is fine-tuned BERT for extractive summarization.
-#Rapid Automatic Keyword Extraction (RAKE)
+. In the BERTSUM model, at the start of each sentence, a [CLS] token is added, and between every two sentences, a [SEP] token is added to separate the sentences.
+• Here, a [CLS] token is added to collect the preceding sentence context. Now each word of the sentence is tokenized using token embeddings.
+• There is also a difference in segment embeddings. In the BERTSUM model, each sen- tence is assigned an embedding of Ea or Eb depending on whether the sentence is even or odd. If the sequence is [s1, s2, s3] then the segment embeddings are [Ea, Eb, Ea].
+• This way, all sentences are embedded and sent into further layers. BERTSUM assigns scores to each sentence that represents how much value that sentence adds to the overall document.
+# Rapid Automatic Keyword Extraction (RAKE)
 Rapid Automatic Keyword Extraction (RAKE) is a well known keyword extraction method that uses a list of stopwords and phrase delimiters to detect the most relevant words or phrases in a piece of text. This algorithm has mainly three components:
 Candidate Selection
 • In candidate selection, all possible words, phrases and terms from the summarized text get extracted that can potentially be a keyword. Consider the following example where the text is, “Keyword extraction is not that difficult after all. There are many libraries that can help you with keyword extraction. Rapid automatic keyword extraction is one of those.”
@@ -63,7 +67,7 @@ Word Co-occurrence Matrix
 Scoring and selecting words
 • After creating a word co-occurrence matrix, RAKE calculates the keyword score. This score of candidate word is computed by taking the degree of a word in the matrix (i.e. the sum of the number of co-occurrences the word has with any other content word in the text), as the word frequency (i.e. the number of times the word appears in the text) which is given by,K = deg(t)/freq(t)
 
-#WordNet
+# WordNet
 • WordNet is a lexical database for the English language, which was created by Princeton, and is part of the NLTK corpus.
 • In the WordNet network, the words are connected by linguistic relations.
 • These linguistic relations includes hypernym, hyponym, meronym, holonym, etc. Word- Net stores synonyms in the form of synsets (Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms) where each word in the synset shares the same meaning.
@@ -73,4 +77,5 @@ Scoring and selecting words
 • These hyponyms are considered potential distractors. Then, the potential distractors are ranked, and the final distractors are chosen based on their rank.
 • The ranks given to the potential distractors are based on whether it occurs in the text extracted from the summarization.
 • Thepotentialdistractorsthatexistintheextractedtextandhavingthesamepartofspeech structure as the key have a higher rank than those with a different structure.
-
+# CONCLUSION
+Multiple Choice Questions (MCQs) are generated successfully. Efficient questions are pro- duced with good quality distractors. The problem of manually creating questions is solved with the proposed system. The proposed system creates automated questions with the help of NLP that reduces human intervention and it is a cost and time effective system. And the accu- racy of the distractor generated is reasonably high. This system not only helps teachers with E-assessments but also helps students who are preparing for competitive exams. Students can test their ability to solve the questions and can also check their understanding of the concepts. Since our proposed system is based on Google’s BERT Model, the accuracy of the system will increase in the future as the performance of the model is improved and as the research in the field of NLP is trying to reach the human level every day.
